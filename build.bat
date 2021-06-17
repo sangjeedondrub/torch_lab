@@ -1,0 +1,1 @@
+docker build -t sangjeedondrub/torch_lab:v0.1 .

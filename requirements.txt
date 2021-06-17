@@ -1,0 +1,7 @@
+torchaudio
+torchvideo
+torchtext
+torchvision
+pytorch-lightning
+jupyterlab
+pandas
