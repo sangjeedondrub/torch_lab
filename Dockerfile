@@ -9,7 +9,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/source
       && sed -i '/security/d' /etc/apt/sources.list \
       && export DEBIAN_FRONTEND=noninteractive \
       && apt update -y \
-      && apt install -y tzdata curl\
+      && apt install -y tzdata curl \
       && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
       && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
       && dpkg-reconfigure --frontend noninteractive tzdata \
