@@ -12,7 +12,7 @@ And visit http://localhost:10010 to reach `jupyterlab`
 
 ### `ImportError: libGL.so.1` for `torchvideo`
 
-Add following to `Dockerfile`
+Add the following to `Dockerfile`
 
 ```bash
 RUN apt-get update
