@@ -20,9 +20,4 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/source
       && rm -rf /var/lib/apt/lists/* \
       && pip install pip -U \
       && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
-      && pip install -r requirements.txt \
-      && jupyter labextension install @jupyter-widgets/jupyterlab-manager \
-            jupyterlab-drawio \
-            jupyterlab-plotly \
-            @bokeh/jupyter_bokeh \
-            @jupyterlab/git
+      && pip install -r requirements.txt
