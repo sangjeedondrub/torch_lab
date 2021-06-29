@@ -13,7 +13,6 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/source
       && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
       && ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
       && dpkg-reconfigure --frontend noninteractive tzdata \
-      && apt install -y nodejs texlive-latex-extra texlive-xetex \
       && apt install -y ffmpeg libsm6 libxext6 \
       && apt-get clean \
       && apt-get autoremove -y \
