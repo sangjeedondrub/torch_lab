@@ -1,4 +1,5 @@
 .vscode/
+config/
 .DS_Store
 .ipynb_checkpoints/
 .docker.env
