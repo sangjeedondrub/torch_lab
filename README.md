@@ -10,6 +10,11 @@ docker-compose up
 
 And visit http://localhost:10010 to reach `jupyterlab`
 
+## TODO
+
++ [ ] Use `datascience-notebook/base-notebook` as base image, [Dockerfile](https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile)
++ [ ] Try [Deepo](https://github.com/ufoym/deepo)
+
 ## Issues
 
 ### `ImportError: libGL.so.1` for `torchvideo`
