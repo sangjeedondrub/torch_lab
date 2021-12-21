@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>README.html</title>
+    <meta
+      http-equiv="Content-Type"
+      content="application/xhtml+xml;charset=utf-8"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+        max-width: 740px;
+        width: 100%;
+        margin: 40px auto;
+        padding: 0 10px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("markdown-body");
+        document.querySelectorAll("pre code").forEach((code) => {
+          if (code.className != "mermaid") {
+            hljs.highlightBlock(code);
+          }
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({
+        theme: "default", // default, forest, dark, neutral
+        startOnLoad: true,
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1 id="pytorch-with-jupyterlab-docker">
+      <code>PyTorch</code> with <code>Jupyterlab</code> + <code>Docker</code>
+    </h1>
+    <blockquote>
+      <p>
+        Developing environment with <code>docker</code> and
+        <code>jupyterlab</code> for deep learning research in
+        <code>PyTorch</code>
+      </p>
+    </blockquote>
+    <p>Change your <code>PASSWORD</code> in <code>.docker.env</code> and run</p>
+    <pre><code>docker-compose up</code></pre>
+    <p>And visit http://localhost:10010 to reach <code>jupyterlab</code></p>
+    <h2 id="todo">TODO</h2>
+    <ul>
+      <li>
+        [ ] Use <code>datascience-notebook/base-notebook</code> as base image,
+        <a
+          href="https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile"
+          >Dockerfile</a
+        >
+      </li>
+      <li>[ ] Try <a href="https://github.com/ufoym/deepo">Deepo</a></li>
+    </ul>
+    <h2 id="issues">Issues</h2>
+    <h3 id="importerror-libgl.so.1-for-torchvideo">
+      <code>ImportError: libGL.so.1</code> for <code>torchvideo</code>
+    </h3>
+    <p>Add the following to <code>Dockerfile</code></p>
+    <pre
+      class="sourceCode bash"
+      id="cb2"
+    ><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">RUN</span> apt-get update -y</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ex">RUN</span> apt-get install ffmpeg libsm6 libxext6 -y</a></code></pre>
+  </body>
+</html>
