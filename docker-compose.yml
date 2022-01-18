@@ -9,19 +9,14 @@ services:
     env_file:
       - ./.docker.env
     volumes:
-      - $PWD:/workspace
+      - .:/workspace
     ipc: host
     restart: always
 
     environment:
       PYTHONIOENCODING: utf-8
-      #NVIDIA_VISIBLE_DEVICES: 0
+      NVIDIA_VISIBLE_DEVICES: all
+      LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+      PYTORCH_VERSION: v1.9.0
 
-    # jupyter notebook with no password
-    #command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token= --NotebookApp.terminado_settings='{"shell_command":["/bin/bash"]}'
-
-    # pass: minh@2018 | https | home folder contains "mycert.pem" and "mykey.key" files
-    #command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.password=sha1:d10e6525ba95:2f4cf9423b0172bf14dee5be9da3c5a349bd5ab3 --NotebookApp.terminado_settings='{"shell_command":["/bin/bash"]}' --NotebookApp.certfile='/home/mycert.pem' --NotebookApp.keyfile='/home/mykey.key'
-
-    # jupyter lab workspace with no password
     command: ./entrypoint.sh

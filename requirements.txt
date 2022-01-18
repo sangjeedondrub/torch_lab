@@ -2,6 +2,7 @@ torchaudio
 torchvideo
 torchtext
 torchvision
+transformers
 pytorch-lightning
 jupyterlab
 ipywidgets

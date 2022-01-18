@@ -8,12 +8,12 @@ Change your `PASSWORD` in `.docker.env` and run
 docker-compose up
 ```
 
-And visit http://localhost:10010 to reach `jupyterlab`
+And visit http://localhost:10011 to reach `jupyterlab`
 
 ## TODO
 
-+ [ ] Use `datascience-notebook/base-notebook` as base image, [Dockerfile](https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile)
-+ [ ] Try [Deepo](https://github.com/ufoym/deepo)
+- [ ] Use `datascience-notebook/base-notebook` as base image, [Dockerfile](https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile)
+- [ ] Try [Deepo](https://github.com/ufoym/deepo)
 
 ## Issues
 
@@ -24,4 +24,10 @@ Add the following to `Dockerfile`
 ```bash
 RUN apt-get update -y
 RUN apt-get install ffmpeg libsm6 libxext6 -y
+```
+
+# Test cuda
+
+```
+docker create -it --gpus all -p 7777:8898 --name torch -v .:/workspace pytorch/pytorch:1.9.0-cuda10.2-cudnn7-runtime
 ```
