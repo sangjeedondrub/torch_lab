@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/env bash
+
 CMD="jupyter lab --allow-root --ip=0.0.0.0 --no-browser"
 
 if [[ -v PASSWORD ]]; then
