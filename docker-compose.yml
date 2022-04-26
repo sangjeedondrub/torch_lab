@@ -4,6 +4,7 @@ services:
     build: .
     image: sangjeedondrub/torch_lab:v0.1
     container_name: sangjee_torch
+    runtime: nvidia
     ports:
       - "10011:8888"
     env_file:
@@ -19,4 +20,4 @@ services:
       LD_LIBRARY_PATH: /usr/local/nvidia/lib:/usr/local/nvidia/lib64
       PYTORCH_VERSION: v1.9.0
 
-    command: ./entrypoint.sh
+    command: bash /workspace/entrypoint.sh

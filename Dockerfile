@@ -19,4 +19,4 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/source
       && rm -rf /var/lib/apt/lists/* \
       && pip install pip -U \
       && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
-      && pip install -r requirements.txt
+      && pip install -r requirements.txt --upgrade
