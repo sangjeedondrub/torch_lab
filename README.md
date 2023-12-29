@@ -31,3 +31,14 @@ RUN apt-get install ffmpeg libsm6 libxext6 -y
 ```
 docker create -it --gpus all -p 7777:8898 --name torch -v .:/workspace pytorch/pytorch:1.9.0-cuda10.2-cudnn7-runtime
 ```
+
+# Try with another docker image
+
+``` shell
+
+docker run --rm -it  \
+		   --gpus all  \
+		   -p 8888:8888  \
+		   -e JUPYTER_TOKEN=passwd  \
+		   tverous/pytorch-notebook:latest
+```

@@ -1,21 +1,16 @@
 torchaudio
-torchvideo
-torchtext
-torchvision
+#torchvideo # failed to install via pip
+#torchtext
+#torchvision
 transformers
 pytorch-lightning
 jupyterlab
 ipywidgets
 plotly
-bokeh
 numpy
 scipy
 scikit-learn
 scikit-image
-simpy
 matplotlib
-ipython
 pandas
-sympy
-seaborn
 pytest

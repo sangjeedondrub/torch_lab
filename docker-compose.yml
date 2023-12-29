@@ -5,13 +5,19 @@ services:
     container_name: sangjee_torch
     ports:
       - "10011:8888"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     env_file:
       - ./.docker.env
     volumes:
       - .:/workspace
     ipc: host
     restart: always
-
     environment:
       PYTHONIOENCODING: utf-8
       NVIDIA_VISIBLE_DEVICES: all
